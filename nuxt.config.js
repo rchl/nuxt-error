@@ -38,14 +38,13 @@ export default {
     '@nuxtjs/axios',
     // https://go.nuxtjs.dev/pwa
     '@nuxtjs/pwa',
-    [
-      'nuxt-i18n',
-      {
-        detectBrowserLanguage: false,
-      },
-    ],
+    'nuxt-i18n',
     '@nuxt/content',
   ],
+
+  router: {
+    trailingSlash: true,
+  },
 
   // Axios module configuration (https://go.nuxtjs.dev/config-axios)
   axios: {
@@ -56,6 +55,7 @@ export default {
   build: {},
 
   i18n: {
+    detectBrowserLanguage: false,
     parsePages: false,
     locales: [
       {
@@ -81,5 +81,4 @@ export default {
       return files.map((file) => file.url_path)
     },
   },
-
 }
